@@ -30,7 +30,11 @@ export async function processTrendingPairs(pairs: WSSPairData[]) {
         ([token]) => token === address
       );
 
-      const firstPair = pairData.data.data?.at(0);
+      const firstPair = pairData.data.data?.find(
+        ({ relationships }) =>
+          relationships.quote_token.data.id ===
+          "ton_EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c"
+      );
       const tokenIsBanned = bannedTokens.includes(address);
       if (!firstPair || tokenAlreadyInTop15 || tokenIsBanned) continue;
 
