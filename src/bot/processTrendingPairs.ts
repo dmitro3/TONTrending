@@ -1,9 +1,9 @@
-import { PairsData, WSSPairData } from "@/types";
+import { WSSPairData } from "@/types";
 import { TokenPoolData } from "@/types/terminalData";
 import { TrendingData, TrendingTokens } from "@/types/trending";
 import { apiFetcher } from "@/utils/api";
 import { bannedTokens } from "@/utils/constants";
-import { COINGECKO_API_KEY, TOKEN_DATA_URL } from "@/utils/env";
+import { COINGECKO_API_KEY } from "@/utils/env";
 import { log } from "@/utils/handlers";
 import {
   previouslyTrendingTokens,
