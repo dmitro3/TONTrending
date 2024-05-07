@@ -1,4 +1,4 @@
-import { BOT_USERNAME, CHANNEL_ID, PINNED_MSG_ID } from "@/utils/env";
+import { CHANNEL_ID, PINNED_MSG_ID } from "@/utils/env";
 import { errorHandler, log } from "@/utils/handlers";
 import { trendingTokens } from "@/vars/trending";
 import { DEXSCREEN_URL } from "@/utils/constants";
@@ -16,7 +16,7 @@ export async function updateTrendingMessage() {
     return log("Channel ID or PINNED_MSG_ID is undefined");
   }
 
-  let trendingTokensMessage = `🟢 @${BOT_USERNAME} \\(LIVE\\)\n\n`;
+  let trendingTokensMessage = `🟢 @InsectTonBuyBot \\(LIVE\\)\n\n`;
   const icons = [
     "🥇",
     "🥈",
@@ -68,7 +68,7 @@ export async function updateTrendingMessage() {
     }
 
     setLastEditted(new Date().toLocaleTimeString());
-    trendingTokensMessage += `\n_Trending data is automatically updated by\n@${BOT_USERNAME} every 10 seconds_`;
+    trendingTokensMessage += `\n_Trending data is automatically updated by\n@InsectTonBuyBot every 10 seconds_`;
 
     // ------------------------------ Advertisements ------------------------------
     const keyboard = generateAdvertisementKeyboard();
